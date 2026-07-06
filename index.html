@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitWin</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Bienvenido a FitWin</h1>
+
+    <button onclick="crearCuenta()">Registrar</button>
+    <button onclick="mostrarLogin()">Login</button>
+
+
+    <div id="registro">
+        <h2>Crear cuenta en FitWin</h2>
+
+        <input id="nombre" type="text" placeholder="Nombre">
+
+        <input id="email" type="email" placeholder="Email">
+
+        <input id="password" type="password" placeholder="Contraseña">
+
+        <button onclick="crearCuenta()">Crear cuenta</button>
+    </div>
+
+
+    <div id="login">
+        <h2>Entrar en FitWin</h2>
+
+        <input id="loginEmail" type="email" placeholder="Email">
+
+        <input id="loginPassword" type="password" placeholder="Contraseña">
+
+        <button onclick="mostrarLogin()">Entrar</button>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html><h2>Contador de flexiones</h2>
+
+<p id="contador">0</p>
+
+<button onclick="sumarFlexion()">+1 Flexión</button>
+
+<button onclick="reiniciarFlexiones()">Reiniciar</button>
