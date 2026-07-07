@@ -37,7 +37,6 @@ function iniciarSesion() {
     document.getElementById("login").style.display = "none";
     document.getElementById("perfil").style.display = "block";
 
-    cargarPerfil();
 }
 
 function sumarFlexion() {
@@ -122,4 +121,11 @@ function empezarFlexiones() {
 }
 
 function mostrarMenuPerfil() {
-    document.get
+    document.getElementById("menuPerfil").style.display = "block";
+}
+
+function cerrarSesion() {
+    document.getElementById("perfil").style.display = "none";
+    document.getElementById("botonesInicio").style.display = "block";
+    document.getElementById("menuPerfil").style.display = "none";
+}
