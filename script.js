@@ -1,4 +1,5 @@
 function mostrarRegistro() {
+    alert("mostrarRegistro funciona");
     document.getElementById("registro").style.display = "block";
     document.getElementById("login").style.display = "none";
 }
