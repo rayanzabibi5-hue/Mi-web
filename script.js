@@ -118,4 +118,12 @@ function reiniciarFlexiones() {
         alert("Error de cámara: " + error.message);
     });
 
+}function mostrarMenuPerfil() {
+    document.getElementById("menuPerfil").style.display = "block";
 }
+
+function cerrarSesion() {
+    document.getElementById("perfil").style.display = "none";
+    document.getElementById("botonesInicio").style.display = "block";
+    document.getElementById("menuPerfil").style.display = "none";
+        }
