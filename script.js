@@ -6,7 +6,9 @@ function mostrarRegistro() {
 function mostrarLogin() {
     document.getElementById("login").style.display = "block";
     document.getElementById("registro").style.display = "none";
-}let flexiones = 0;
+}
+
+let flexiones = 0;
 let dinero = 0;
 let bajando = false;
 
@@ -25,6 +27,8 @@ function crearCuenta() {
     document.getElementById("login").style.display = "none";
     document.getElementById("perfil").style.display = "block";
 
+    cargarPerfil();
+
     alert("🎉 ¡Cuenta creada con éxito!");
 }
 
@@ -33,6 +37,8 @@ function iniciarSesion() {
     document.getElementById("registro").style.display = "none";
     document.getElementById("login").style.display = "none";
     document.getElementById("perfil").style.display = "block";
+
+    cargarPerfil();
 }
 
 function sumarFlexion() {
@@ -42,17 +48,15 @@ function sumarFlexion() {
     document.getElementById("contador").innerHTML = flexiones;
     document.getElementById("dinero").innerHTML = dinero.toFixed(2) + " €";
 }
+
 function reiniciarFlexiones() {
     flexiones = 0;
     dinero = 0;
 
     document.getElementById("contador").innerHTML = flexiones;
     document.getElementById("dinero").innerHTML = "0,00 €";
-}
-
-
-
-    function empezarFlexiones() {
+        }
+function empezarFlexiones() {
 
     const video = document.getElementById("camara");
 
@@ -77,35 +81,34 @@ function reiniciarFlexiones() {
 
         pose.onResults(function(results) {
 
-    if (results.poseLandmarks) {
+            if (results.poseLandmarks) {
 
-    let hombro = results.poseLandmarks[11];
-    let codo = results.poseLandmarks[13];
-    let muñeca = results.poseLandmarks[15];
+                let hombro = results.poseLandmarks[11];
+                let codo = results.poseLandmarks[13];
 
-    if (codo.y > hombro.y) {
-        bajando = true;
-    }
+                if (codo.y > hombro.y) {
+                    bajando = true;
+                }
 
-    if (bajando && codo.y < hombro.y) {
-        flexiones++;
-        dinero += 0.01;
+                if (bajando && codo.y < hombro.y) {
+                    flexiones++;
+                    dinero += 0.01;
 
-        document.getElementById("contador").innerHTML = flexiones;
-        document.getElementById("dinero").innerHTML = dinero.toFixed(2) + " €";
+                    document.getElementById("contador").innerHTML = flexiones;
+                    document.getElementById("dinero").innerHTML = dinero.toFixed(2) + " €";
 
-        bajando = false;
-    }
+                    bajando = false;
+                }
 
             } else {
-        document.getElementById("contador").innerHTML = "Buscando cuerpo...";
-    }
+                document.getElementById("contador").innerHTML = "Buscando cuerpo...";
+            }
 
-});
+        });
 
         const camera = new Camera(video, {
             onFrame: async () => {
-                await pose.send({image: video});
+                await pose.send({ image: video });
             },
             width: 640,
             height: 480
@@ -117,42 +120,7 @@ function reiniciarFlexiones() {
     .catch(function(error) {
         alert("Error de cámara: " + error.message);
     });
-
-}function mostrarMenuPerfil() {
-    document.getElementById("menuPerfil").style.display = "block";
 }
 
-function cerrarSesion() {
-    document.getElementById("perfil").style.display = "none";
-    document.getElementById("botonesInicio").style.display = "block";
-    document.getElementById("menuPerfil").style.display = "none";
-        }
-function guardarProgreso() {
-    localStorage.setItem("dinero", dinero);
-
-    const fecha = new Date().toLocaleString("es-ES");
-    localStorage.setItem("fechaGuardado", fecha);
-
-    document.getElementById("monedasGuardadas").textContent = dinero;
-    document.getElementById("fechaGuardado").textContent = fecha;
-
-    alert("✅ Progreso guardado");
-}
-
-function cargarPerfil() {
-    const monedas = localStorage.getItem("dinero");
-    const fecha = localStorage.getItem("fechaGuardado");
-
-    if (monedas) {
-        document.getElementById("monedasGuardadas").textContent = monedas;
-    }
-
-    if (fecha) {
-        document.getElementById("fechaGuardado").textContent = fecha;
-    }
-}
-
-window.onload = function () {
-    cargarProgreso(); // si ya la tienes
-    cargarPerfil();
-};
+function mostrarMenuPerfil() {
+    document.get
