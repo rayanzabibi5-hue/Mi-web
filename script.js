@@ -154,3 +154,32 @@ function actualizarPantalla() {
     document.getElementById("dinero").textContent = dinero;
     document.getElementById("contador").textContent = flexiones;
             }
+function guardarProgreso() {
+    localStorage.setItem("dinero", dinero);
+
+    const fecha = new Date().toLocaleString("es-ES");
+    localStorage.setItem("fechaGuardado", fecha);
+
+    document.getElementById("monedasGuardadas").textContent = dinero;
+    document.getElementById("fechaGuardado").textContent = fecha;
+
+    alert("✅ Progreso guardado");
+}
+
+function cargarPerfil() {
+    const monedas = localStorage.getItem("dinero");
+    const fecha = localStorage.getItem("fechaGuardado");
+
+    if (monedas) {
+        document.getElementById("monedasGuardadas").textContent = monedas;
+    }
+
+    if (fecha) {
+        document.getElementById("fechaGuardado").textContent = fecha;
+    }
+}
+
+window.onload = function () {
+    cargarProgreso(); // si ya la tienes
+    cargarPerfil();
+};
