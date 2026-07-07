@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -34,67 +34,36 @@
 
     <button onclick="iniciarSesion()">Entrar</button>
 </div>
+
 <div id="perfil" style="display:none;">
 
     <div class="barraSuperior">
-        <img onclick="mostrarMenuPerfil()" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" id="fotoPerfil" alt="Foto de perfil">
-<span id="nombreUsuario"></span>
+        <img onclick="mostrarMenuPerfil()"
+             src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+             id="fotoPerfil"
+             alt="Foto de perfil">
+
+        <span id="nombreUsuario"></span>
     </div>
 
-<div id="menuPerfil" style="display:none;">
-    <button onclick="cerrarSesion()">Cerrar sesión</button>
-    function guardarProgreso() {
-    localStorage.setItem("dinero", dinero);
-
-    const fecha = new Date().toLocaleString("es-ES");
-    localStorage.setItem("fechaGuardado", fecha);
-
-    document.getElementById("monedasGuardadas").textContent = dinero;
-    document.getElementById("fechaGuardado").textContent = fecha;
-
-    alert("✅ Progreso guardado");
-}
-
-function cargarPerfil() {
-    const monedas = localStorage.getItem("dinero");
-    const fecha = localStorage.getItem("fechaGuardado");
-
-    if (monedas) {
-        document.getElementById("monedasGuardadas").textContent = monedas;
-    }
-
-    if (fecha) {
-        document.getElementById("fechaGuardado").textContent = fecha;
-    }
-}
-
-window.onload = function () {
-    cargarProgreso(); // si ya la tienes
-    cargarPerfil();
-};
+    <div id="menuPerfil" style="display:none;">
+        <button onclick="cerrarSesion()">Cerrar sesión</button>
     </div>
-    
 
     <h2>💰 Dinero ganado</h2>
-<div id="dinero">0,00 €</div>
+    <div id="dinero">0,00 €</div>
 
-<h3>Contador de flexiones</h3>
-<div id="contador">0</div>
+    <h3>Contador de flexiones</h3>
+    <div id="contador">0</div>
 
-<button onclick="sumarFlexion()">+1 Flexión</button>
-<button onclick="reiniciarFlexiones()">Reiniciar</button>
-   <button onclick="empezarFlexiones()">💪 Empezar flexiones</button>
-   <p>💰 Monedas guardadas: <span id="monedasGuardadas">0,00 €</span></p>
-<p>📅 Último guardado: <span id="fechaGuardado">Nunca</span></p>
+    <button onclick="sumarFlexion()">+1 Flexión</button>
+    <button onclick="reiniciarFlexiones()">Reiniciar</button>
+    <button onclick="empezarFlexiones()">💪 Empezar flexiones</button>
 
-<button onclick="guardarProgreso()">Guardar progreso</button>
-<video id="camara" autoplay playsinline width="300"></video>
-</div>
-<button onclick="guardarProgreso()">💾 Guardar progreso</button>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js"></script>
+    <p>💰 Monedas guardadas: <span id="mon
+                  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
 <script src="script.js"></script>
 
 </body>
-</html>
+    </html>              
