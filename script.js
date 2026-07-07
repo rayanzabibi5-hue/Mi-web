@@ -1,5 +1,4 @@
 function mostrarRegistro() {
-    alert("mostrarRegistro funciona");
     document.getElementById("registro").style.display = "block";
     document.getElementById("login").style.display = "none";
 }
@@ -28,7 +27,6 @@ function crearCuenta() {
     document.getElementById("login").style.display = "none";
     document.getElementById("perfil").style.display = "block";
 
-    cargarPerfil();
 
     alert("🎉 ¡Cuenta creada con éxito!");
 }
