@@ -76,11 +76,13 @@ function reiniciarFlexiones() {
 
         pose.onResults(function(results) {
 
-            if (results.poseLandmarks) {
-                console.log("Cuerpo detectado ✅");
-            }
+    if (results.poseLandmarks) {
+        document.getElementById("contador").innerHTML = "Cuerpo detectado ✅";
+    } else {
+        document.getElementById("contador").innerHTML = "Buscando cuerpo...";
+    }
 
-        });
+});
 
         const camera = new Camera(video, {
             onFrame: async () => {
