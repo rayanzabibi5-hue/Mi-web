@@ -37,9 +37,13 @@
 <div id="perfil" style="display:none;">
 
     <div class="barraSuperior">
-        <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" id="fotoPerfil" alt="Foto de perfil">
-        <span id="nombreUsuario"></span>
+        <img onclick="mostrarMenuPerfil()" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" id="fotoPerfil" alt="Foto de perfil">
+<span id="nombreUsuario"></span>
+
+<div id="menuPerfil" style="display:none;">
+    <button onclick="cerrarSesion()">Cerrar sesión</button>
     </div>
+    
 
     <h2>💰 Dinero ganado</h2>
 <div id="dinero">0,00 €</div>
