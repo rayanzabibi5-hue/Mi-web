@@ -8,6 +8,7 @@ function mostrarLogin() {
     document.getElementById("registro").style.display = "none";
 }let flexiones = 0;
 let dinero = 0;
+let bajando = false;
 
 function crearCuenta() {
     let usuario = document.getElementById("usuarioRegistro").value;
@@ -77,8 +78,26 @@ function reiniciarFlexiones() {
         pose.onResults(function(results) {
 
     if (results.poseLandmarks) {
-        document.getElementById("contador").innerHTML = "Cuerpo detectado ✅";
-    } else {
+
+    let hombro = results.poseLandmarks[11];
+    let codo = results.poseLandmarks[13];
+    let muñeca = results.poseLandmarks[15];
+
+    if (codo.y > hombro.y) {
+        bajando = true;
+    }
+
+    if (bajando && codo.y < hombro.y) {
+        flexiones++;
+        dinero += 0.01;
+
+        document.getElementById("contador").innerHTML = flexiones;
+        document.getElementById("dinero").innerHTML = dinero.toFixed(2) + " €";
+
+        bajando = false;
+    }
+
+            } else {
         document.getElementById("contador").innerHTML = "Buscando cuerpo...";
     }
 
