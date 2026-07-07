@@ -127,3 +127,30 @@ function cerrarSesion() {
     document.getElementById("botonesInicio").style.display = "block";
     document.getElementById("menuPerfil").style.display = "none";
         }
+function guardarProgreso() {
+    localStorage.setItem("dinero", dinero);
+    localStorage.setItem("flexiones", flexiones);
+
+    alert("✅ Progreso guardado correctamente");
+}
+
+function cargarProgreso() {
+    const dineroGuardado = localStorage.getItem("dinero");
+    const flexionesGuardadas = localStorage.getItem("flexiones");
+
+    if (dineroGuardado !== null) {
+        dinero = parseInt(dineroGuardado);
+    }
+
+    if (flexionesGuardadas !== null) {
+        flexiones = parseInt(flexionesGuardadas);
+    }
+
+    actualizarPantalla();
+}
+
+window.onload = cargarProgreso;
+function actualizarPantalla() {
+    document.getElementById("dinero").textContent = dinero;
+    document.getElementById("contador").textContent = flexiones;
+            }
