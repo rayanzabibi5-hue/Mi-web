@@ -129,33 +129,6 @@ function cerrarSesion() {
         }
 function guardarProgreso() {
     localStorage.setItem("dinero", dinero);
-    localStorage.setItem("flexiones", flexiones);
-
-    alert("✅ Progreso guardado correctamente");
-}
-
-function cargarProgreso() {
-    const dineroGuardado = localStorage.getItem("dinero");
-    const flexionesGuardadas = localStorage.getItem("flexiones");
-
-    if (dineroGuardado !== null) {
-        dinero = parseInt(dineroGuardado);
-    }
-
-    if (flexionesGuardadas !== null) {
-        flexiones = parseInt(flexionesGuardadas);
-    }
-
-    actualizarPantalla();
-}
-
-window.onload = cargarProgreso;
-function actualizarPantalla() {
-    document.getElementById("dinero").textContent = dinero;
-    document.getElementById("contador").textContent = flexiones;
-            }
-function guardarProgreso() {
-    localStorage.setItem("dinero", dinero);
 
     const fecha = new Date().toLocaleString("es-ES");
     localStorage.setItem("fechaGuardado", fecha);
