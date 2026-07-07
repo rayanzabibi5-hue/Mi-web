@@ -50,7 +50,6 @@ function reiniciarFlexiones() {
 }
 
 
-    }
 
     function empezarFlexiones() {
 
