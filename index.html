@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -20,8 +20,8 @@
     <h2>Crear cuenta</h2>
 
     <input type="text" id="usuarioRegistro" placeholder="Nombre">
-    <input type="email" placeholder="Email">
-    <input type="password" placeholder="Contraseña">
+    <input type="email" id="emailRegistro" placeholder="Email">
+    <input type="password" id="passwordRegistro" placeholder="Contraseña">
 
     <button onclick="crearCuenta()">Crear cuenta</button>
 </div>
@@ -29,8 +29,8 @@
 <div id="login" style="display:none;">
     <h2>Iniciar sesión</h2>
 
-    <input type="email" placeholder="Email">
-    <input type="password" placeholder="Contraseña">
+    <input type="email" id="emailLogin" placeholder="Email">
+    <input type="password" id="passwordLogin" placeholder="Contraseña">
 
     <button onclick="iniciarSesion()">Entrar</button>
 </div>
@@ -38,29 +38,23 @@
 <div id="perfil" style="display:none;">
 
     <div class="barraSuperior">
-        <img onclick="mostrarMenuPerfil()"
-             src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
-             id="fotoPerfil"
-             alt="Foto de perfil">
+        <img
+            id="fotoPerfil"
+            src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+            alt="Foto de perfil"
+            onclick="mostrarMenuPerfil()">
 
         <span id="nombreUsuario"></span>
     </div>
 
     <div id="menuPerfil" style="display:none;">
-        <button onclick="cerrarSesion()">Cerrar sesión</button>
-    </div>
+        <button
+            </div>
 
-    <h2>💰 Dinero ganado</h2>
-    <div id="dinero">0,00 €</div>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
 
-    <h3>Contador de flexiones</h3>
-    <div id="contador">0</div>
-
-    <button onclick="sumarFlexion()">+1 Flexión</button>
-    <button onclick="reiniciarFlexiones()">Reiniciar</button>
-    <button onclick="empezarFlexiones()">💪 Empezar flexiones</button>
-
-   
+<script src="script.js"></script>
 
 </body>
-    </html>             
+        </html>
