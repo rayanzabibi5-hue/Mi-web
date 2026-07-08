@@ -152,7 +152,11 @@ function guardarProgreso() {
     localStorage.setItem("dinero", dinero);
 
     document.getElementById("record").innerHTML = record;
-
+setDoc(doc(db, "usuarios", localStorage.getItem("nombreUsuario")), {
+    nombre: localStorage.getItem("nombreUsuario"),
+    flexiones: flexiones,
+    dinero: dinero
+});
     alert("✅ Progreso guardado");
 }
 
