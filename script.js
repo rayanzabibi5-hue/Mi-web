@@ -21,7 +21,7 @@ function crearCuenta() {
     }
 
     document.getElementById("nombreUsuario").innerHTML = usuario;
-
+localStorage.setItem("nombreUsuario", usuario);
     document.getElementById("botonesInicio").style.display = "none";
     document.getElementById("registro").style.display = "none";
     document.getElementById("login").style.display = "none";
@@ -160,3 +160,8 @@ async function guardarProgreso() {
         alert("Error: " + e);
     }
 }
+let nombreGuardado = localStorage.getItem("nombreUsuario");
+
+if (nombreGuardado) {
+    document.getElementById("nombreUsuario").innerHTML = nombreGuardado;
+    }
