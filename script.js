@@ -11,7 +11,9 @@ function mostrarLogin() {
 let flexiones = 0;
 let dinero = 0;
 let bajando = false;
-
+const db = window.db;
+const doc = window.doc;
+const setDoc = window.setDoc;
 function crearCuenta() {
     let usuario = document.getElementById("usuarioRegistro").value;
 
