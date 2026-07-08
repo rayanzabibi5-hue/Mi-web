@@ -226,7 +226,7 @@ async function mostrarRanking() {
     usuarios.sort((a, b) => b.flexiones - a.flexiones);
 
     lista.innerHTML = "";
-
+console.log(db, collection, getDocs);
     usuarios.forEach((usuario, i) => {
         lista.innerHTML += `<p>${i + 1}. ${usuario.nombre} - ${usuario.flexiones} flexiones</p>`;
     });
