@@ -176,7 +176,7 @@ let dineroGuardado = localStorage.getItem("dinero");
 
 if (dineroGuardado !== null) {
     dinero = Number(dineroGuardado);
-    document.getElementById("dinero").innerHTML = dinero;
+    document.getElementById("dinero").innerHTML = dinero.toFixed(2) + " €";
 }
     
 
