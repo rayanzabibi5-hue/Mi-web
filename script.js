@@ -134,6 +134,7 @@ function empezarFlexiones() {
                                          }
 function guardarProgreso() {
 
+    // Guardar récord de flexiones
     let record = localStorage.getItem("recordFlexiones");
 
     if (record === null || flexiones > Number(record)) {
@@ -141,21 +142,48 @@ function guardarProgreso() {
         record = flexiones;
     }
 
+    // Guardar flexiones actuales
+    localStorage.setItem("flexiones", flexiones);
+
+    // Guardar dinero
+    localStorage.setItem("dinero", dinero);
+
     document.getElementById("record").innerHTML = record;
 
     alert("✅ Progreso guardado");
 }
 
+
 window.onload = function () {
+
+    // Cargar récord
     let record = localStorage.getItem("recordFlexiones");
 
     if (record !== null) {
         document.getElementById("record").innerHTML = record;
     }
+
+    // Cargar flexiones
+    let flexionesGuardadas = localStorage.getItem("flexiones");
+
+    if (flexionesGuardadas !== null) {
+        flexiones = Number(flexionesGuardadas);
+        document.getElementById("contador").innerHTML = flexiones;
+    }
+
+    // Cargar dinero
+    let dineroGuardado = localStorage.getItem("dinero");
+
+    if (dineroGuardado !== null) {
+        dinero = Number(dineroGuardado);
+        document.getElementById("dinero").innerHTML = dinero;
+    }
 }
 
+
+// Cargar nombre
 let nombreGuardado = localStorage.getItem("nombreUsuario");
 
 if (nombreGuardado) {
     document.getElementById("nombreUsuario").innerHTML = nombreGuardado;
-    }
+}
