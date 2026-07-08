@@ -159,41 +159,40 @@ window.onload = function () {
 
     // Cargar récord
     let record = localStorage.getItem("recordFlexiones");
-
     if (record !== null) {
         document.getElementById("record").innerHTML = record;
     }
 
     // Cargar flexiones
     let flexionesGuardadas = localStorage.getItem("flexiones");
-
     if (flexionesGuardadas !== null) {
         flexiones = Number(flexionesGuardadas);
         document.getElementById("contador").innerHTML = flexiones;
     }
-// Cargar dinero
-let dineroGuardado = localStorage.getItem("dinero");
 
-if (dineroGuardado !== null) {
-    dinero = Number(dineroGuardado);
-    document.getElementById("dinero").innerHTML = dinero.toFixed(2) + " €";
-}
-    
+    // Cargar dinero
+    let dineroGuardado = localStorage.getItem("dinero");
+    if (dineroGuardado !== null) {
+        dinero = Number(dineroGuardado);
+        document.getElementById("dinero").innerHTML = dinero.toFixed(2) + " €";
+    }
 
-// Cargar nombre
-let nombreGuardado = localStorage.getItem("nombreUsuario");
+    // Cargar nombre
+    let nombreGuardado = localStorage.getItem("nombreUsuario");
+    if (nombreGuardado) {
+        document.getElementById("nombreUsuario").innerHTML = nombreGuardado;
+    }
 
-if (nombreGuardado) {
-    document.getElementById("nombreUsuario").innerHTML = nombreGuardado;
-}
-let sesion = localStorage.getItem("sesionActiva");
+    // Mantener sesión
+    let sesion = localStorage.getItem("sesionActiva");
+    if (sesion === "true") {
+        document.getElementById("botonesInicio").style.display = "none";
+        document.getElementById("registro").style.display = "none";
+        document.getElementById("login").style.display = "none";
+        document.getElementById("perfil").style.display = "block";
+    }
 
-if (sesion === "true") {
-    document.getElementById("botonesInicio").style.display = "none";
-    document.getElementById("registro").style.display = "none";
-    document.getElementById("login").style.display = "none";
-    document.getElementById("perfil").style.display = "block";
-}
+};
 function mostrarRanking() {
     let ranking = document.getElementById("ranking");
 
@@ -204,6 +203,6 @@ function mostrarRanking() {
     }
 
     document.getElementById("tuRanking").innerHTML = flexiones;
-        }
+}
 
 }
