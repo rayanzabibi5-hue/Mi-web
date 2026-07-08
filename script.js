@@ -14,8 +14,8 @@ let bajando = false;
 const db = window.db;
 const doc = window.doc;
 const setDoc = window.setDoc;
-const collection = window.collection;
-const getDocs = window.getDocs;
+const collectionFn = window.collection;
+const getDocsFn = window.getDocs;
 function crearCuenta() {
     let usuario = document.getElementById("usuarioRegistro").value;
 
