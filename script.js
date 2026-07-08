@@ -199,16 +199,36 @@ window.onload = function () {
     }
 
 };
-function mostrarRanking() {
+async function mostrarRanking() {
+
     let ranking = document.getElementById("ranking");
 
     if (ranking.style.display === "block") {
         ranking.style.display = "none";
-    } else {
-        ranking.style.display = "block";
+        return;
     }
 
-    document.getElementById("tuRanking").innerHTML = flexiones;
-}
+    ranking.style.display = "block";
+
+    const lista = document.getElementById("listaRanking");
+    lista.innerHTML = "Cargando...";
+
+    const usuarios = [];
+
+    const consulta = await getDocs(collection(db, "usuarios"));
+
+    consulta.forEach((doc) => {
+        usuarios.push(doc.data());
+    });
+
+    usuarios.sort((a, b) => b.flexiones - a.flexiones);
+
+    lista.innerHTML = "";
+
+    usuarios.forEach((usuario, i) => {
+        lista.innerHTML += `<p>${i + 1}. ${usuario.nombre} - ${usuario.flexiones} flexiones</p>`;
+    });
+
+    }
 
 
