@@ -204,6 +204,6 @@ function mostrarRanking() {
     }
 
     document.getElementById("tuRanking").innerHTML = flexiones;
-    }
+}
 
 }
