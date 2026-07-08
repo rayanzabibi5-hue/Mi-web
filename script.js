@@ -147,3 +147,10 @@ window.onload = function () {
         document.getElementById("record").innerHTML = record;
     }
 }
+async function guardarProgreso() {
+    try {
+        alert("✅ En el siguiente paso conectaremos Firestore para guardar los datos.");
+    } catch (e) {
+        alert("Error: " + e);
+    }
+}
