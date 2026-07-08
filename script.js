@@ -185,3 +185,5 @@ let nombreGuardado = localStorage.getItem("nombreUsuario");
 if (nombreGuardado) {
     document.getElementById("nombreUsuario").innerHTML = nombreGuardado;
 }
+
+}
