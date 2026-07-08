@@ -137,7 +137,7 @@ function empezarFlexiones() {
         alert("Error de cámara: " + error.message);
     });
                                          }
-function guardarProgreso() {
+async function guardarProgreso() {
 
     // Guardar récord de flexiones
     let record = localStorage.getItem("recordFlexiones");
@@ -154,7 +154,7 @@ function guardarProgreso() {
     localStorage.setItem("dinero", dinero);
 
     document.getElementById("record").innerHTML = record;
-setDoc(doc(db, "usuarios", localStorage.getItem("nombreUsuario")), {
+await setDoc(doc(db, "usuarios", localStorage.getItem("nombreUsuario")), {
     nombre: localStorage.getItem("nombreUsuario"),
     flexiones: flexiones,
     dinero: dinero
