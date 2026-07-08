@@ -215,22 +215,32 @@ async function mostrarRanking() {
     const lista = document.getElementById("listaRanking");
     lista.innerHTML = "Cargando...";
 
-    const usuarios = [];
+    try {
+        const consulta = await getDocs(collection(db, "usuarios"));
 
-    const consulta = await getDocs(collection(db, "usuarios"));
+        const usuarios = [];
 
-    consulta.forEach((doc) => {
-        usuarios.push(doc.data());
-    });
+        consulta.forEach((doc) => {
+            usuarios.push(doc.data());
+        });
 
-    usuarios.sort((a, b) => b.flexiones - a.flexiones);
+        usuarios.sort((a, b) => b.flexiones - a.flexiones);
 
-    lista.innerHTML = "";
-console.log(db, collection, getDocs);
-    usuarios.forEach((usuario, i) => {
-        lista.innerHTML += `<p>${i + 1}. ${usuario.nombre} - ${usuario.flexiones} flexiones</p>`;
-    });
+        lista.innerHTML = "";
 
+        if (usuarios.length === 0) {
+            lista.innerHTML = "No hay usuarios todavía.";
+            return;
+        }
+
+        usuarios.forEach((usuario, i) => {
+            lista.innerHTML += `<p>${i + 1}. ${usuario.nombre} - ${usuario.flexiones} flexiones</p>`;
+        });
+
+    } catch (error) {
+        lista.innerHTML = "❌ Error: " + error.message;
+        console.error(error);
     }
+}
 
 
