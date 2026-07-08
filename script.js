@@ -194,5 +194,16 @@ if (sesion === "true") {
     document.getElementById("login").style.display = "none";
     document.getElementById("perfil").style.display = "block";
 }
+function mostrarRanking() {
+    let ranking = document.getElementById("ranking");
+
+    if (ranking.style.display === "block") {
+        ranking.style.display = "none";
+    } else {
+        ranking.style.display = "block";
+    }
+
+    document.getElementById("tuRanking").innerHTML = flexiones;
+}
 
 }
