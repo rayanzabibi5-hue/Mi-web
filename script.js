@@ -186,5 +186,13 @@ let nombreGuardado = localStorage.getItem("nombreUsuario");
 if (nombreGuardado) {
     document.getElementById("nombreUsuario").innerHTML = nombreGuardado;
 }
+let sesion = localStorage.getItem("sesionActiva");
+
+if (sesion === "true") {
+    document.getElementById("botonesInicio").style.display = "none";
+    document.getElementById("registro").style.display = "none";
+    document.getElementById("login").style.display = "none";
+    document.getElementById("perfil").style.display = "block";
+}
 
 }
