@@ -85,7 +85,7 @@
             
 <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
-  import { getFirestore } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
+  import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyCbGtoZmooATzzcN7HBtNHJLt5niQ9t3AI",
@@ -98,7 +98,9 @@
 
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
-
+window.setDoc = setDoc;
+window.getDoc = getDoc;
+window.doc = doc;
   window.db = db;
 </script>
 </body>
