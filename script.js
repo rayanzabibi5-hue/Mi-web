@@ -170,7 +170,13 @@ window.onload = function () {
         flexiones = Number(flexionesGuardadas);
         document.getElementById("contador").innerHTML = flexiones;
     }
+// Cargar dinero
+let dineroGuardado = localStorage.getItem("dinero");
 
+if (dineroGuardado !== null) {
+    dinero = Number(dineroGuardado);
+    document.getElementById("dinero").innerHTML = dinero;
+}
     // Cargar dinero
     let dineroGuardado = localStorage.getItem("dinero");
 
