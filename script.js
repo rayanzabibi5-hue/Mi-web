@@ -126,3 +126,24 @@ function empezarFlexiones() {
         alert("Error de cámara: " + error.message);
     });
                                          }
+function guardarProgreso() {
+
+    let record = localStorage.getItem("recordFlexiones");
+
+    if (record === null || flexiones > Number(record)) {
+        localStorage.setItem("recordFlexiones", flexiones);
+        record = flexiones;
+    }
+
+    document.getElementById("record").innerHTML = record;
+
+    alert("✅ Progreso guardado");
+}
+
+window.onload = function () {
+    let record = localStorage.getItem("recordFlexiones");
+
+    if (record !== null) {
+        document.getElementById("record").innerHTML = record;
+    }
+}
