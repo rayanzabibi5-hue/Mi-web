@@ -216,7 +216,7 @@ async function mostrarRanking() {
     lista.innerHTML = "Cargando...";
 
     try {
-        const consulta = await getDocs(collection(db, "usuarios"));
+        const consulta = await getDocsFn(collectionFn(db, "usuarios"));
 
         const usuarios = [];
 
