@@ -53,8 +53,14 @@ function reiniciarFlexiones() {
     document.getElementById("dinero").innerHTML = "0,00 €";
 }
 function mostrarMenuPerfil() {
-    document.getElementById("menuPerfil").style.display = "block";
-}
+    let menu = document.getElementById("menuPerfil");
+
+    if (menu.style.display === "block") {
+        menu.style.display = "none";
+    } else {
+        menu.style.display = "block";
+    }
+                            }
 
 function cerrarSesion() {
     document.getElementById("perfil").style.display = "none";
